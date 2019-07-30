@@ -32,12 +32,14 @@ func load(data interface{}, filename string) {
 	if err != nil {
 		panic(err)
 	}
+
 	buffer := bytes.NewBuffer(raw)
 	dec := gob.NewDecoder(buffer)
 	err = dec.Decode(data)
 	if err != nil {
 		panic(err)
 	}
+
 }
 
 func main() {
